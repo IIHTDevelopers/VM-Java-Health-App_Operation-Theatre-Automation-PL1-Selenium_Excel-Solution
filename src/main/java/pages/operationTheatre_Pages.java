@@ -41,13 +41,21 @@ public class operationTheatre_Pages extends StartupPage {
 	public operationTheatre_Pages(WebDriver driver) {
 		super(driver);
 	}
-
+	
 	/**@Test1.1
-	 * about this method loginTohealthAppByGivenValidCredetial() 
-	 * @param : Map<String, String>
-	 * @description : fill usernameTextbox & passwordTextbox and click on sign in button
-	 * @return : Boolean
-	 * @author : Yaksha
+	 * Logs into the Health App using the provided valid credentials.
+	 *
+	 * @param expectedData A map containing login credentials with keys "username" and "password".
+	 * @return true if the login is successful and the registered patient text is displayed, false otherwise.
+	 * @throws Exception if any issue occurs during login.
+	 * 
+	 * This method:
+	 * - Finds and highlights the username and password text fields.
+	 * - Enters the provided username and password.
+	 * - Clicks the sign-in button.
+	 * - Verifies if the registered patient text is displayed to confirm successful login.
+	 * 
+	 * @author Yaksha
 	 */
 	public boolean loginToHealthAppByGivenValidCredetial(Map<String, String> expectedData) throws Exception {
 		Boolean textIsDisplayed = false;
@@ -77,11 +85,17 @@ public class operationTheatre_Pages extends StartupPage {
 	}
 
 	/**@Test1.2
-	 * about this method verifyTitleOfThePage() 
+	 * Verifies the title of the current page.
 	 * @param : null
-	 * @description : it will navigate to the URL and validate the title of the current page.
-	 * @return : String
-	 * @author : YAKSHA
+	 * @return The title of the current page as a String.
+	 * @throws Exception if any issue occurs while retrieving the title.
+	 * 
+	 * This method:
+	 * - Retrieves the title of the currently loaded page.
+	 * - Prints the title to the console.
+	 * - Returns the title as a String.
+	 * 
+	 * @author YAKSHA
 	 */
 	public String verifyTitleOfThePage() throws Exception {
 		String pageTitle = "";
@@ -95,11 +109,17 @@ public class operationTheatre_Pages extends StartupPage {
 	}
 
 	/**@Test1.3
-	 * about this method verifyURLOfThePage() 
+	 * Retrieves and verifies the URL of the current page.
 	 * @param : null
-	 * @description : it will navigate to the URL and validate the URL of the current page.
-	 * @return : String
-	 * @author : YAKSHA
+	 * @return The current page URL as a String.
+	 * @throws Exception if any issue occurs while retrieving the URL.
+	 * 
+	 * This method:
+	 * - Retrieves the URL of the currently loaded page.
+	 * - Prints the URL to the console.
+	 * - Returns the URL as a String.
+	 * 
+	 * @author YAKSHA
 	 */
 	public String verifyURLOfThePage() throws Exception {
 		String urlofThepage = "";
@@ -113,11 +133,18 @@ public class operationTheatre_Pages extends StartupPage {
 	}
 
 	/**@Test2
-	 * about this method verifyOperationTheatreModuleIsPresentAndGoToOperationTheatreTab() 
+	 * Navigates to the Operation Theatre module and verifies the table header name.
 	 * @param : null
-	 * @description : Verify that OperationTheatre module is present and Go to OperationTheatre Tab.
-	 * @return : String
-	 * @author : YAKSHA
+	 * @return The table header name as a String if the Operation Theatre module is present; otherwise, an empty string.
+	 * @throws Exception if any issue occurs during navigation or verification.
+	 * 
+	 * This method:
+	 * - Checks if the Operation Theatre module is present.
+	 * - Clicks on the module if it is available.
+	 * - Verifies if the hospital number table header is displayed.
+	 * - Retrieves and returns the table header name.
+	 * 
+	 * @author YAKSHA
 	 */
 	public String goToOperationTheatreModuleVerifyTableHeaderName() throws Exception {
 		String tableHeaderNameIsDisplayed = "";
@@ -140,13 +167,17 @@ public class operationTheatre_Pages extends StartupPage {
 		return tableHeaderNameIsDisplayed;
 	}
 
-
 	/**@Test3
-	 * about this method verifyBookingOTScheduleFormByClickingOnNewOTBookingButton() 
+	 * Verifies the Booking OT Schedule form by clicking the "New OT Booking" button.
 	 * @param : null
-	 * @description : verify the button & text 
-	 * @return : String
-	 * @author : YAKSHA
+	 * @return The title name of the Booking OT Schedule form as a String.
+	 * @throws Exception if any issue occurs during the process.
+	 * 
+	 * This method:
+	 * - Clicks on the "New OT Booking" button.
+	 * - Retrieves and returns the title name of the Booking OT Schedule form.
+	 * 
+	 * @author YAKSHA
 	 */
 	public String verifyBookingOTScheduleFormByClickingOnNewOTBookingButton() throws Exception {
 		String bookingOTScheduleFormsName = "";
@@ -161,14 +192,24 @@ public class operationTheatre_Pages extends StartupPage {
 		return bookingOTScheduleFormsName;
 	}
 
+
 	/**@Test4
-	 * about this method verifyTexboxIsPresentAndValidateEnteredValue() 
-	 * @param : null
-	 * @description : verify text box , then send value to that text box and validate the entered value
-	 * @return : String
-	 * @author : YAKSHA
+	 * Verifies if the textboxes are present, enters values into them, and validates the entered values.
+	 * @param expectedData A map containing values for:
+	 *        - "patientName": The value to be entered in the patient selection textbox.
+	 *        - "diagnosisValue": The value to be entered in the diagnosis textbox.
+	 *        - "surgeryTypeValue": The value to be entered in the surgery type textbox.
+	 * @return The value entered in the patient selection textbox as a String.
+	 * @throws Exception if any issue occurs during the process.
+	 * 
+	 * This method:
+	 * - Checks if the Booking OT Schedule form title is displayed.
+	 * - Enters values into the patient name, diagnosis, and surgery type textboxes.
+	 * - Retrieves and returns the value entered in the patient selection textbox.
+	 * 
+	 * @author YAKSHA
 	 */
-	public String verifyTexboxIsPresentAndValidateEnteredValue(Map<String, String> expectedData) throws Exception {
+	public String verifyEnteredDataIsPresentInSelectPatientTextbox(Map<String, String> expectedData) throws Exception {
 
 		String selectPatientTextboxValue = "";
 		try {
@@ -185,13 +226,18 @@ public class operationTheatre_Pages extends StartupPage {
 		}	
 		return selectPatientTextboxValue;
 	}
-
+	
 	/**@Test5
-	 * about this method verifyPlaceholderNameOfTexboxIfTextboxIsEnabled() 
+	 * Verifies the placeholder name of a textbox.
 	 * @param : null
-	 * @description : verify the placeholder name of text box if text box is enabled
-	 * @return : String
-	 * @author : YAKSHA
+	 * @return The placeholder name of the textbox as a String.
+	 * @throws Exception if any issue occurs during the process.
+	 * 
+	 * This method:
+	 * - Checks if the textbox is enabled.
+	 * - Retrieves and returns the placeholder text of the textbox.
+	 * 
+	 * @author YAKSHA
 	 */
 	public String verifyPlaceholderNameOfTexboxIfTextboxIsEnabled() throws Exception {
 		String placeholderNameOfRemarkasTextarea = "";
@@ -210,12 +256,23 @@ public class operationTheatre_Pages extends StartupPage {
 		return placeholderNameOfRemarkasTextarea;
 	}
 
+	
 	/**@Test6
-	 * about this method verifyButtonIsPresentAfterSendValueToSurgenNameTextfield() 
-	 * @param : null
-	 * @description : verify the button is present after send the value to the text box
-	 * @return : String
-	 * @author : YAKSHA
+	 * Verifies if a button is present after entering a value into the surgeon name text field.
+	 *
+	 * @param expectedData A map containing:
+	 *        - "surgenNameValue1": The value to be entered into the surgeon name text field.
+	 * @return The text of the surgeon name button if present, otherwise an empty string.
+	 * @throws Exception if any issue occurs during the process.
+	 * 
+	 * This method:
+	 * - Checks if the surgeon name text field is displayed.
+	 * - Enters the provided surgeon name and presses Enter.
+	 * - Clicks on the Any other text box to trigger UI changes.
+	 * - Checks if the surgeon name button is displayed.
+	 * - Retrieves and returns the text of the surgeon name button.
+	 * 
+	 * @author YAKSHA
 	 */
 	public String verifyButtonIsPresentAfterSendValueToSurgenNameTextfield(Map<String, String> expectedData) throws Exception {
 		String surgenNameButtonAttributeValue = "";
@@ -236,12 +293,20 @@ public class operationTheatre_Pages extends StartupPage {
 		return surgenNameButtonAttributeValue;
 	}
 
-	/**@Test7
-	 * about this method verifyPlusButtonIsPresentAfterClickOnExternalCheckbox() 
+	 /**@Test7
+	 * Verifies if the plus (+) button is present after clicking the external checkbox.
 	 * @param : null
-	 * @description : click on check box and verify check box is selected or not and verify the + (plus) icon after click on check box
-	 * @return : Boolean
-	 * @author : YAKSHA
+	 * @return true if the plus (+) button is displayed after selecting the checkbox, otherwise false.
+	 * @throws Exception if any issue occurs during the process.
+	 * 
+	 * This method:
+	 * - Checks if the external checkbox is displayed.
+	 * - Clicks the external checkbox.
+	 * - Verifies if the checkbox is selected.
+	 * - Checks if the plus (+) button is displayed.
+	 * - Returns true if the plus (+) button is present.
+	 * 
+	 * @author YAKSHA
 	 */
 	public Boolean verifyPlusButtonIsPresentAfterClickOnExternalCheckbox() throws Exception {
 		boolean plusIconIsDisplayed = false;
@@ -259,13 +324,21 @@ public class operationTheatre_Pages extends StartupPage {
 		}	
 		return plusIconIsDisplayed;
 	}
-
+	
 	/**@Test8
-	 * about this method verifyErrorMessageInAddExternalReferralForms() 
+	 * Verifies the error message displayed in the "Add External Referral" form.
 	 * @param : null
-	 * @description : verify the error message
-	 * @return : String
-	 * @author : YAKSHA
+	 * @return The error message as a String if displayed; otherwise, an empty string.
+	 * @throws Exception if any issue occurs during the process.
+	 * 
+	 * This method:
+	 * - Checks if the plus (+) icon button is displayed.
+	 * - Clicks on the plus (+) icon button.
+	 * - Clicks on the "Add" button in the "Add External Referral" form.
+	 * - Checks if the error message is displayed.
+	 * - Retrieves and returns the error message text.
+	 *
+	 * @author YAKSHA
 	 */
 	public String verifyErrorMessageInAddExternalReferralForms() throws Exception {
 		String errorMessageOfAddExternalReferralForms = "";
@@ -285,7 +358,5 @@ public class operationTheatre_Pages extends StartupPage {
 		}
 		return errorMessageOfAddExternalReferralForms;
 	}
-
-
 
 }
