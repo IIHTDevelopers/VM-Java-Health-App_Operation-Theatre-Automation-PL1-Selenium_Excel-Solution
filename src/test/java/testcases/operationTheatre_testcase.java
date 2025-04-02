@@ -41,7 +41,7 @@ public class operationTheatre_testcase extends AppTestBase
 	}
 
 	@Test(priority = 1, groups = {"sanity"}, description="Verify the title and url of  the current page.")
-	public void verifyTitleOfTheHomePage() throws Exception {
+	public void verifyTitleAndURLOfTheHomePage() throws Exception {
 
 		operationTheatre_PagesInstance = new operationTheatre_Pages(driver);
 		locatorsFactoryInstance = new LocatorsFactory(driver);
@@ -94,13 +94,13 @@ public class operationTheatre_testcase extends AppTestBase
 			+ "Type of Surgery textbox\r\n"
 			+ "Check the data which we are entered are present\r\n"
 			+ "in Select Patient textbox or not ?")
-	public void verifyEnteredDataIsPresentInTextbox() throws Exception {
+	public void verifyEnteredDataIsPresentInSelectPatientTextbox() throws Exception {
 
 		operationTheatre_PagesInstance = new operationTheatre_Pages(driver);
 		locatorsFactoryInstance = new LocatorsFactory(driver);
 		Map<String, String> expectedData = new FileOperations().readExcelPOI(expectedDataFilePath, "operationTheatreModuleStringVal");
 
-		Assert.assertEquals(operationTheatre_PagesInstance.verifyTexboxIsPresentAndValidateEnteredValue(expectedData),expectedData.get("patientName")) ;
+		Assert.assertEquals(operationTheatre_PagesInstance.verifyEnteredDataIsPresentInSelectPatientTextbox(expectedData),expectedData.get("patientName")) ;
 		Assert.assertEquals(locatorsFactoryInstance.verifyValueIsPresentInTypeOfSurgeryTextbox(),expectedData.get("surgeryTypeValue")) ;
 	}
 
